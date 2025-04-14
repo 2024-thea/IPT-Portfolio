@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>My Website Portfolio</title>
+
+<style>
+
+* {
+
+box-sizing: border-box;
+
+margin: 0;
+
+padding: 0;
+
+}
+
+
+
+body {
+
+font-family: 'Arial', sans-serif;
+
+line-height: 1.6;
+
+background: #F5F5DC;
+
+color: #333;
+
+position: relative;
+
+scroll-behavior: smooth;
+
+padding-right: 15px;
+
+padding-top: 82px;
+
+
+
+
+background-image: url('https://static.vecteezy.com/system/resources/thumbnails/012/245/705/small/camouflage-texture-pattern-vector.jpg');
+
+background-size: cover;
+
+background-repeat: no-repeat;
+
+background-position: center center;
+
+background-attachment: fixed;
+
+}
+
+
+
+body::before {
+
+content: "";
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+background-color: rgba(245, 245, 220, 0.4);
+
+z-index: -1;
+
+}
+
+
+
+header {
+
+background: #333;
+
+padding: 15px 20px;
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+border-bottom: 2px solid #555;
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+z-index: 100;
+
+min-height: 62px;
+
+}
+
+
+
+header h1 {
+
+text-align: left;
+
+color: #FF69B4;
+
+font-size: 1.8em;
+
+}
+
+
+
+nav {
+
+display: flex;
+
+flex-wrap: wrap;
+
+}
+
+
+
+nav a {
+
+margin: 5px 15px;
+
+text-decoration: none;
+
+color: white;
+
+position: relative;
+
+padding-bottom: 5px;
+
+white-space: nowrap;
+
+}
+
+
+
+nav a::after {
+
+content: '';
+
+display: block;
+
+position: absolute;
+
+bottom: 0;
+
+left: 50%;
+
+transform: translateX(-50%) scaleX(0);
+
+width: 100%;
+
+height: 2px;
+
+background-color: #FF69B4;
+
+transition: transform 0.2s ease-out;
+
+}
+
+
+
+nav a:hover::after,
+
+nav a.active::after {
+
+transform: translateX(-50%) scaleX(1);
+
+}
+
+
+
+.section {
+
+padding: 40px 20px;
+
+background: rgba(68, 68, 68, 0.75);
+
+color: #ddd;
+
+margin-bottom: 20px;
+
+min-height: auto;
+
+border-radius: 10px;
+
+}
+
+
+
+.content {
+
+max-width: 1000px;
+
+margin: auto;
+
+display: flex;
+
+flex-wrap: wrap;
+
+gap: 20px;
+
+align-items: center;
+
+}
+
+
+
+
+#home .content img,
+
+#about .content img {
+
+width: 300px;
+
+height: 300px;
+
+object-fit: cover;
+
+border-radius: 10px;
+
+border: 1px solid #555;
+
+margin-right: 20px;
+
+flex-shrink: 0;
+
+}
+
+
+
+.content p,
+
+.content div {
+
+flex: 1;
+
+min-width: 250px;
+
+}
+
+
+
+.column {
+
+flex-direction: column;
+
+align-items: stretch;
+
+}
+
+
+
+.card {
+
+background: rgba(85, 85, 85, 0.8);
+
+padding: 20px;
+
+border-radius: 12px;
+
+margin: 15px 0;
+
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+
+
+}
+
+
+
+
+#projects .card .card-content-wrapper {
+
+display: flex;
+
+align-items: center;
+
+gap: 25px;
+
+flex-wrap: wrap;
+
+}
+
+
+
+#projects .card .card-text {
+
+flex: 1;
+
+text-align: left;
+
+min-width: 200px;
+
+}
+
+
+
+#projects .card .card-text h3 {
+
+color: #FF69B4;
+
+margin-bottom: 10px;
+
+}
+
+
+
+#projects .card img {
+
+width: 180px;
+
+height: 140px;
+
+object-fit: cover;
+
+border-radius: 8px;
+
+flex-shrink: 0;
+
+border: 1px solid #666;
+
+}
+
+
+
+
+
+
+
+
+footer {
+
+text-align: center;
+
+padding: 20px;
+
+background: rgba(40, 40, 40, 0.85);
+
+border-top: 1px solid #555;
+
+color: #aaa;
+
+position: relative;
+
+}
+
+
+
+footer h2 {
+
+color: #ccc;
+
+margin-bottom: 10px;
+
+}
+
+
+
+
+.scroll-indicator {
+
+position: fixed;
+
+top: 0;
+
+right: 5px;
+
+width: 5px;
+
+height: 100%;
+
+background-color: #ccc;
+
+z-index: 100;
+
+}
+
+
+
+.scroll-progress {
+
+position: absolute;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+background-color: #FF69B4;
+
+
+}
+
+
+
+.contact-section {
+
+background: rgba(68, 68, 68, 0.75);
+
+color: #ddd;
+
+text-align: left;
+
+padding: 40px 20px;
+
+border-radius: 10px;
+
+margin-bottom: 20px;
+
+}
+
+
+
+.contact-content {
+
+display: flex;
+
+flex-direction: column;
+
+gap: 20px;
+
+max-width: 800px;
+
+margin: 0 auto;
+
+padding: 0 10px;
+
+}
+
+
+
+.contact-content h2 {
+
+font-size: 2em;
+
+margin-bottom: 10px;
+
+color: #FF69B4;
+
+text-align: center;
+
+}
+
+
+
+.contact-content p {
+
+line-height: 1.6;
+
+text-align: center;
+
+}
+
+
+
+.contact-content a {
+
+color: #64b5f6;
+
+text-decoration: none;
+
+}
+
+
+
+.contact-content a:hover {
+
+text-decoration: underline;
+
+}
+
+
+
+.contact-form {
+
+display: grid;
+
+grid-template-columns: 1fr;
+
+gap: 15px;
+
+margin-top: 20px;
+
+}
+
+
+
+.form-group {
+
+display: flex;
+
+flex-direction: column;
+
+align-items: flex-start;
+
+}
+
+
+
+.form-group label {
+
+margin-bottom: 5px;
+
+font-weight: bold;
+
+font-size: 1em;
+
+color: #ddd;
+
+width: 100%;
+
+text-align: left;
+
+}
+
+
+
+.form-group input[type="text"],
+
+.form-group input[type="email"],
+
+.form-group textarea {
+
+padding: 12px;
+
+border: 1px solid #555;
+
+border-radius: 5px;
+
+font-size: 1em;
+
+background-color: #555;
+
+color: #ddd;
+
+width: 100%;
+
+}
+
+
+
+.form-group input[type="text"]:focus,
+
+.form-group input[type="email"]:focus,
+
+.form-group textarea:focus {
+
+outline: none;
+
+border-color: #FF69B4;
+
+box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+
+}
+
+
+
+.form-group textarea {
+
+resize: vertical;
+
+min-height: 120px;
+
+}
+
+
+
+.contact-form button[type="submit"] {
+
+background-color: #FF69B4;
+
+color: white;
+
+padding: 12px 20px;
+
+border: none;
+
+border-radius: 5px;
+
+font-size: 1em;
+
+font-weight: bold;
+
+cursor: pointer;
+
+transition: background-color 0.3s ease, transform 0.1s ease;
+
+width: fit-content;
+
+margin: 15px auto 0 auto;
+
+display: block;
+
+}
+
+
+
+.contact-form button[type="submit"]:hover {
+
+background-color: #d6458f;
+
+}
+
+.contact-form button[type="submit"]:active {
+
+transform: scale(0.98);
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<header>
+
+<h1>MY PORTFOLIO</h1>
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#about">About Me</a>
+
+<a href="#projects">My Projects and Skills</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+
+
+<div class="scroll-indicator">
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+</div>
+
+
+
+<section id="home" class="section">
+
+<div class="content">
+
+<img src="https://www.shutterstock.com/image-photo/military-think-tank-ai-technology-600nw-2404044435.jpg"
+
+alt="Portfolio image" />
+
+<div> <p>Welcome to my digital command center. Here, I deploy my skills in web development, creating user-friendly interfaces. My mission is to innovate and implement solutions in the field of Army. Explore my tactical projects and strategic skills.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="about" class="section">
+
+<div class="content">
+
+<img src="https://scontent.fmnl34-1.fna.fbcdn.net/v/t39.30808-6/489693160_122100541958830476_6963952188571947830_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHjpJTXIGcXycxMYZ8qjzJgcBFp8VKEKxZwEWnxUoQrFuXUgmbtM3S1r69WZhQinGMy4NGkvjwRBskGt7Zl7Arm&_nc_ohc=k-qS6JVgPXwQ7kNvwE6z31r&_nc_oc=AdlB4iEeXaQ0IV-A82qoOE7IVkGK0haUZKVgAzj30KFRjNwSmeDNMCLMc3HmkQrSQ0JwUIrzoMs2neER_BCuUzAS&_nc_zt=23&_nc_ht=scontent.fmnl34-1.fna&_nc_gid=h1fD2Nh4i3oJ00PDmX9xZA&oh=00_AfGkuKVKGg1u-wq7AdTKSEEYsO77a6iChOA_OjFXXpycKQ&oe=68014BE5" alt="Jaythea Asuncion" />
+
+<div>
+
+<h2 style="color: #FF69B4; margin-bottom: 10px;">Jaythea Asuncion</h2> <p>Hi! I am Jaythea Francine F. Asuncion, a student major in web and game development, currently studying at Pamantasan ng Lungsod ng San Pablo. At 20 years old, my objective is to master the art of technology.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="projects" class="section"> <div class="content column">
+
+<div class="card">
+
+<div class="card-content-wrapper">
+
+<div class="card-text"> <h3>Project: Inventory Management System</h3>
+
+<p>This project utilizes HTML, CSS, and JavaScript to conduct a dynamic and responsive interface.</p>
+
+</div>
+
+<img src="https://jaro-website.s3.ap-south-1.amazonaws.com/2024/10/inventory-management-system.png" alt="Project Image" /> </div>
+
+</div>
+
+<div class="card">
+
+<div class="card-content-wrapper">
+
+<img src="https://www.collidu.com/media/catalog/product/img/d/6/d628b081982528ea559fd10ece97848c6b58951ab0fbee25f52bf9733061c70c/computer-multitasking-slide4.png" alt="Skills Image" /> <div class="card-text"> <h3>Skill: Multitasking </h3>
+
+<p>Proficient in HTML, C# and currently expanding my responsive design techniques. Committed to continuous learning and upgrading my skills for my future goals.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="section contact-section">
+
+<div class="content contact-content">
+
+<h2>Contact</h2>
+
+<p>Please feel free to reach out to me by filling out the form below or sending an email directly. I look forward to hearing from you!</p>
+
+<p>Email: <a href="mailto:theaasuncion17@gmail.com">theaasuncion17@gmail.com</a></p>
+
+
+
+<form class="contact-form" action="#" method="post">
+
+<div class="form-group">
+
+<label for="name">Name:</label>
+
+<input type="text" id="name" name="name" required>
+
+</div>
+
+<div class="form-group">
+
+<label for="email">Email:</label>
+
+<input type="email" id="email" name="email" required>
+
+</div>
+
+<div class="form-group">
+
+<label for="subject">Subject:</label>
+
+<input type="text" id="subject" name="subject">
+
+</div>
+
+<div class="form-group">
+
+<label for="message">Message:</label>
+
+<textarea id="message" name="message" rows="5" required></textarea>
+
+</div>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<h2>More Contact:</h2>
+
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1StJpU5QZ1WLa88RAW14BWFaRfq_AkPuiZQ&s" alt="Facebook Logo" style="width: 20px; height: 20px; vertical-align: middle;">Facebook: <span id="facebook-footer">Jaythea Francine</span></p>
+</footer>
+
+
+
+<script>
+
+
+const scrollProgress = document.getElementById('scrollProgress');
+
+const headerHeight = document.querySelector('header').offsetHeight;
+
+const sections = document.querySelectorAll('.section');
+
+const navLinks = document.querySelectorAll('nav a');
+
+
+
+function updateScrollProgress() {
+
+const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+const scrolled = window.scrollY;
+
+const progress = (scrolled / totalHeight) * 100;
+
+scrollProgress.style.height = progress + '%';
+
+}
+
+
+
+function updateActiveNavLink() {
+
+let currentSectionId = 'home';
+
+const scrollPosition = window.scrollY + headerHeight + 50;
+
+
+
+sections.forEach(section => {
+
+if (scrollPosition >= section.offsetTop) {
+
+currentSectionId = section.getAttribute('id');
+
+}
+
+});
+
+
+
+navLinks.forEach(link => {
+
+link.classList.remove('active');
+
+if (link.getAttribute('href') === #${currentSectionId}) {
+
+link.classList.add('active');
+
+}
+
+});
+
+}
+
+
+
+window.addEventListener('scroll', () => {
+
+updateScrollProgress();
+
+updateActiveNavLink();
+
+});
+
+
+
+
+updateScrollProgress();
+
+updateActiveNavLink();
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+</html>
